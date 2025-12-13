@@ -20,6 +20,7 @@ The system demonstrates core Java programming techniques including file handling
 - **Search Functionality**: Find members by ID or other criteria
 
 ## 🏗️ Project Structure
+```
 FitnessClub/
 ├── src/javaproject/
 │ ├── Calculator.java # Utility calculations
@@ -34,6 +35,7 @@ FitnessClub/
 ├── .gitignore # Git ignore rules
 ├── FitnessClub.iml # IntelliJ IDEA project file
 └── README.md # This file
+```
 
 ## 🛠️ Technologies & Concepts
 
@@ -56,8 +58,10 @@ FitnessClub/
    ```bash
    git clone <repository-url>
 2. Navigate to the project directory:
+   ```bash
    cd FitnessClub
 3. Compile and run the main class:
+   ```bash
    javac src/javaproject/*.java
    java src/javaproject/JavaProject
 
