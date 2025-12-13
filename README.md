@@ -23,18 +23,17 @@ The system demonstrates core Java programming techniques including file handling
 ```
 FitnessClub/
 ├── src/javaproject/
-│ ├── Calculator.java # Utility calculations
-│ ├── FileHandler.java # CSV file operations
-│ ├── JavaProject.java # Main application entry point
-│ ├── Member.java # Base member class (abstract)
-│ ├── MembershipManagement.java # Core business logic
-│ ├── MultiClubMember.java # Multi-club member implementation
-│ ├── SingleClubMember.java # Single-club member implementation
-│ └── (Interfaces if any) # Interface definitions
-├── members.csv # Data storage file
-├── .gitignore # Git ignore rules
-├── FitnessClub.iml # IntelliJ IDEA project file
-└── README.md # This file
+│    ├── Calculator.java 
+│    ├── FileHandler.java 
+│    ├── JavaProject.java 
+│    ├── Member.java 
+│    ├── MembershipManagement.java 
+│    ├── MultiClubMember.java 
+│    ├── SingleClubMember.java 
+├── members.csv 
+├── .gitignore 
+├── FitnessClub.iml 
+└── README.md
 ```
 
 ## 🛠️ Technologies & Concepts
