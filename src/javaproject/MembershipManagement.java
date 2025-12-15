@@ -7,19 +7,22 @@ import java.util.Scanner;
 public class MembershipManagement {
     final private Scanner reader = new Scanner(System.in);
 
-    private int getIntInput(){
-        int choice = 0;
-        while (choice == 0){
-            try {
-                choice = reader.nextInt();
-                reader.nextLine();
-            } catch (InputMismatchException e){
-                System.out.println("ERROR: INVALID INPUT. Please try again:");
-                if (choice == 0) throw new InputMismatchException();
-            }
+  private int getIntInput() {
+    int choice = 0;
+
+    while (choice == 0) {
+        try {
+            choice = reader.nextInt();
+            reader.nextLine(); // чистим \n
+        } catch (InputMismatchException e) {
+            System.out.println("ERROR: INVALID INPUT. Please try again:");
+            reader.nextLine();
+            choice = 0;         
         }
-        return choice;
     }
+
+    return choice;
+}
 
     private void printClubOptions(){
         System.out.println("1) Club Mercury" + "\n" + "2) Club Neptune" + "\n" + "3) Club Jupiter" + "\n" + "4) Multi Clubs");
