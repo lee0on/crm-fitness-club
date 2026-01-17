@@ -1,0 +1,9 @@
+project\fcl\model\MultiClubMember.class
+project\fcl\service\FileHandler.class
+project\fcl\service\Calculator.class
+project\fcl\model\Member.class
+project\fcl\app\FxApp.class
+project\fcl\service\MembershipManagement.class
+project\fcl\model\SingleClubMember.class
+project\fcl\ui\main\MainController.class
+project\fcl\ui\search\SearchMemberController.class
