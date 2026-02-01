@@ -43,10 +43,6 @@ public class MembershipManagement {
         String name;
         int club;
         String mem;
-        double fees;
-        int memberID;
-        Member mbr;
-        Calculator<Integer> calculator;
 
         System.out.println("Enter visitor's name");
         name = reader.nextLine();
@@ -57,32 +53,16 @@ public class MembershipManagement {
             System.out.println("Invalid ID, enter new ID");
             club = getIntInput();
         }
-        if (!m.isEmpty()){
-            memberID = m.getLast().getMemberId() + 1;
-        } else memberID = 1;
-        if (club != 4){
-            calculator = (n) -> switch (n) {
-                case 1 -> 900;
-                case 2 -> 950;
-                case 3 -> 1000;
-                default -> -1;
-            };
-            fees = calculator.calculateFees(club);
-            mbr = new SingleClubMember('S', memberID, name, fees, club);
-            m.add(mbr);
-            mem = mbr.toCSV();
+
+        Member mbr = createMember(name, club, m);
+        mem = mbr.toCSV();
+
+        if (club != 4) {
             System.out.println("STATUS: Single Club Member added");
         } else {
-            calculator = (n) -> switch (n) {
-                case 4 -> 1200;
-                default -> -1;
-            };
-            fees = calculator.calculateFees(club);
-            mbr = new MultiClubMember('M', memberID, name, fees, 100);
-            m.add(mbr);
-            mem = mbr.toCSV();
             System.out.println("STATUS: Multi Club Member added");
         }
+
         return mem;
     }
 
@@ -97,6 +77,40 @@ public class MembershipManagement {
             }
         }
         System.out.println("Visitor was not found");
+    }
+
+    public Member createMember(String name, int club, LinkedList<Member> m) {
+        int memberID;
+        Member mbr;
+        Calculator<Integer> calculator;
+        double fees;
+
+        if (!m.isEmpty()) {
+            memberID = m.getLast().getMemberId() + 1;
+        } else {
+            memberID = 1;
+        }
+
+        if (club != 4) {
+            calculator = (n) -> switch (n) {
+                case 1 -> 900;
+                case 2 -> 950;
+                case 3 -> 1000;
+                default -> -1;
+            };
+            fees = calculator.calculateFees(club);
+            mbr = new SingleClubMember('S', memberID, name, fees, club);
+        } else {
+            calculator = (n) -> switch (n) {
+                case 4 -> 1200;
+                default -> -1;
+            };
+            fees = calculator.calculateFees(club);
+            mbr = new MultiClubMember('M', memberID, name, fees, 100);
+        }
+
+        m.add(mbr);
+        return mbr;
     }
 
     public String printMemberInfo(LinkedList<Member> m, int input){
