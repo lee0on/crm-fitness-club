@@ -22,7 +22,21 @@ public class MainController {
 
     @FXML
     private void onAddMember() {
-        openNewWindow("Add Member");
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/ui/add/add-member.fxml")
+            );
+
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Add Member");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
