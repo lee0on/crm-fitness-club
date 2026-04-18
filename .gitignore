@@ -5,7 +5,7 @@ out/
 target/
 .idea/compiler.xml
 *.lst
-members.csv
+.idea/
 
 ### Eclipse ###
 .apt_generated
